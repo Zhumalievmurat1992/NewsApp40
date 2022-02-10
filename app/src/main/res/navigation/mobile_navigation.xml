@@ -29,7 +29,7 @@
         tools:layout="@layout/fragment_news" />
     <fragment
         android:id="@+id/navigation_person"
-        android:name="kg.geektech.newsapp40.ui.person.PersonFragment"
+        android:name="kg.geektech.newsapp40.ui.profile.ProfileFragment"
         android:label="fragment_person"
         tools:layout="@layout/fragment_person" />
 </navigation>

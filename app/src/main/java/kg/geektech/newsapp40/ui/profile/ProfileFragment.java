@@ -1,4 +1,4 @@
-package kg.geektech.newsapp40.ui.person;
+package kg.geektech.newsapp40.ui.profile;
 
 import android.net.Uri;
 import android.os.Bundle;
@@ -14,12 +14,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import kg.geektech.newsapp40.R;
-import kg.geektech.newsapp40.databinding.FragmentNotificationsBinding;
 import kg.geektech.newsapp40.databinding.FragmentPersonBinding;
 
 
-public class PersonFragment extends Fragment {
+public class ProfileFragment extends Fragment {
 
     private FragmentPersonBinding binding;
     @Override
