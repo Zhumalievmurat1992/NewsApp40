@@ -14,17 +14,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import kg.geektech.newsapp40.databinding.FragmentPersonBinding;
+import kg.geektech.newsapp40.databinding.FragmentProfileBinding;
 
 
 public class ProfileFragment extends Fragment {
 
-    private FragmentPersonBinding binding;
+    private FragmentProfileBinding binding;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = FragmentPersonBinding.inflate(inflater, container, false);
+        binding = FragmentProfileBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
 
