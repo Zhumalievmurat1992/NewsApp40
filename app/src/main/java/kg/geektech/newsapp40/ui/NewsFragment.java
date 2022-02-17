@@ -29,7 +29,6 @@ import kg.geektech.newsapp40.models.News;
 
 public class NewsFragment extends Fragment {
        private FragmentNewsBinding binding;
-       TextView root;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
