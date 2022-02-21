@@ -1,4 +1,4 @@
-package kg.geektech.newsapp40.ui;
+package kg.geektech.newsapp40.ui.news;
 
 import android.os.Build;
 import android.os.Bundle;

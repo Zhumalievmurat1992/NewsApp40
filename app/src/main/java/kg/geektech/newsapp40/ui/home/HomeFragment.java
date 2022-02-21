@@ -13,11 +13,10 @@ import androidx.fragment.app.FragmentResultListener;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
-import kg.geektech.newsapp40.NewsAdapter;
+import kg.geektech.newsapp40.ui.news.NewsAdapter;
 import kg.geektech.newsapp40.R;
 import kg.geektech.newsapp40.databinding.FragmentHomeBinding;
 import kg.geektech.newsapp40.models.News;
@@ -62,9 +61,9 @@ public class HomeFragment extends Fragment {
             public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
                News news = (News) result.getSerializable("news");
                homeAdapter.addItem(news);
-//                Date currentTime = Calendar.getInstance().getTime();
-//                Log.e("Home","text: "+ news.getTitle());
-//                Log.e("Text","text: "+ currentTime.toString());
+                Date currentTime = Calendar.getInstance().getTime();
+               Log.e("Home","text: "+ news.getTitle());
+               Log.e("Text","text: "+ currentTime.toString());
             }
         });
     }

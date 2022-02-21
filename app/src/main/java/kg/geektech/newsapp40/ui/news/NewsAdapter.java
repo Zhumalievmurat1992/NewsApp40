@@ -1,9 +1,8 @@
-package kg.geektech.newsapp40;
+package kg.geektech.newsapp40.ui.news;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
@@ -12,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
+import kg.geektech.newsapp40.R;
 import kg.geektech.newsapp40.databinding.ItemNewsBinding;
 import kg.geektech.newsapp40.models.News;
 
@@ -62,8 +62,8 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ContViewHolder
             String currentTime = simpleDateFormat.format(news.getCreatedAt());
             binding.textView.setText(news.getTitle());
             binding.tvTime.setText(currentTime);
-            if (getAdapterPosition() %2  ==1){
-                itemView.setBackgroundColor(ContextCompat.getColor(context,R.color.white));
+            if (getAdapterPosition() %2  ==0){
+                itemView.setBackgroundColor(ContextCompat.getColor(context, R.color.white));
             }else{
                 itemView.setBackgroundColor(ContextCompat.getColor(context, R.color.grey));
             }
