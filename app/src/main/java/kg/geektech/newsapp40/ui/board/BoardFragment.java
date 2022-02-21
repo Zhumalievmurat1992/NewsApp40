@@ -13,15 +13,8 @@ import androidx.viewpager2.widget.ViewPager2;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
-import com.google.android.material.tabs.TabLayout;
-import com.tbuonomo.viewpagerdotsindicator.BaseDotsIndicator;
-import com.tbuonomo.viewpagerdotsindicator.DotsIndicator;
 import com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import kg.geektech.newsapp40.R;
 import kg.geektech.newsapp40.databinding.FragmentBoardBinding;
@@ -49,10 +42,10 @@ public class BoardFragment extends Fragment {
         BoardAdapter adapter = new BoardAdapter();
         viewPager2.setAdapter(adapter);
         dotsIndicator.setViewPager2(viewPager2);
-        binding.btnGetStarted.setOnClickListener(new View.OnClickListener() {
+        binding.tvSkip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                close ();
+                openFragment();
             }
         });
 
@@ -84,7 +77,7 @@ public class BoardFragment extends Fragment {
 
     }
 
-    private void close() {
+    private void openFragment() {
         NavController navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_activity_main);
         navController.navigateUp();
     }
