@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 
 import com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator;
 
+import kg.geektech.newsapp40.Prefs;
 import kg.geektech.newsapp40.R;
 import kg.geektech.newsapp40.databinding.FragmentBoardBinding;
 
@@ -23,14 +24,13 @@ import kg.geektech.newsapp40.databinding.FragmentBoardBinding;
 
 public class BoardFragment extends Fragment {
     FragmentBoardBinding binding;
-     SpringDotsIndicator dotsIndicator;
+    SpringDotsIndicator dotsIndicator;
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        binding = FragmentBoardBinding.inflate(inflater,container,false);
+        binding = FragmentBoardBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
 
@@ -42,27 +42,22 @@ public class BoardFragment extends Fragment {
         BoardAdapter adapter = new BoardAdapter();
         viewPager2.setAdapter(adapter);
         dotsIndicator.setViewPager2(viewPager2);
-        binding.tvSkip.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openFragment();
-            }
-        });
+        binding.tvSkip.setOnClickListener(view12 -> close());
+        binding.btnGetStarted.setOnClickListener(view1 -> close());
+
 
         viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
             public void onPageSelected(int position) {
                 super.onPageSelected(position);
-                if (position ==2){
+                if (position == 2) {
                     binding.tvSkip.setVisibility(View.INVISIBLE);
-                }else {
+                } else {
                     binding.tvSkip.setVisibility(View.VISIBLE);
                 }
-                if (position ==2){
-//                    binding.btnNext.setVisibility(View.INVISIBLE);
+                if (position == 2) {
                     binding.btnGetStarted.setVisibility(View.VISIBLE);
-                }else {
-//                    binding.btnNext.setVisibility(View.VISIBLE);
+                } else {
                     binding.btnGetStarted.setVisibility(View.INVISIBLE);
                 }
             }
@@ -74,10 +69,12 @@ public class BoardFragment extends Fragment {
                         requireActivity().finish();
                     }
                 });
-
     }
 
-    private void openFragment() {
+    private void close() {
+        Prefs prefs = new Prefs(requireContext());
+        prefs.saveBoardState();
+        // prefs.isBoardShown();
         NavController navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_activity_main);
         navController.navigateUp();
     }

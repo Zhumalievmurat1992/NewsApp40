@@ -6,11 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".ui.profile.ProfileFragment">
 
-<ImageView
-    android:id="@+id/photo"
-    android:layout_width="300dp"
-    android:layout_height="300dp"
-    android:layout_gravity="center"
-    android:background="@drawable/ic_person"
-    tools:ignore="ContentDescription" />
+    <ImageView
+        android:id="@+id/photo"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_gravity="center"
+        android:background="@drawable/ic_person"
+        tools:ignore="ContentDescription" />
+
+    <EditText
+        android:id="@+id/edit_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="180dp" />
+
+
 </FrameLayout>

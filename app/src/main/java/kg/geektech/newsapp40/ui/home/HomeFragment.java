@@ -15,7 +15,9 @@ import androidx.navigation.Navigation;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
+import kg.geektech.newsapp40.App;
 import kg.geektech.newsapp40.ui.news.NewsAdapter;
 import kg.geektech.newsapp40.R;
 import kg.geektech.newsapp40.databinding.FragmentHomeBinding;
@@ -57,17 +59,20 @@ public class HomeFragment extends Fragment {
         });
         getParentFragmentManager().setFragmentResultListener("rk_news",
                 getViewLifecycleOwner(), new FragmentResultListener() {
-            @Override
-            public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
-               News news = (News) result.getSerializable("news");
-               homeAdapter.addItem(news);
-                Date currentTime = Calendar.getInstance().getTime();
-               Log.e("Home","text: "+ news.getTitle());
-               Log.e("Text","text: "+ currentTime.toString());
-            }
-        });
-    }
+                    @Override
+                    public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
+//                        News news = (News) result.getSerializable("news");
+//                        homeAdapter.addItem(news);
+//                        Date currentTime = Calendar.getInstance().getTime();
+//                        Log.e("Home", "text: " + news.getTitle());
+//                        Log.e("Text", "text: " + currentTime.toString());
+                    }
+                });
 
+
+    List<News> newsList = App.dataBase.newsDao().getAllNews();
+    homeAdapter.addItems(newsList);
+}
 
     private void openFragment() {
         NavController navController = Navigation.findNavController(requireActivity(),

@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.List;
 
 import kg.geektech.newsapp40.R;
 import kg.geektech.newsapp40.databinding.ItemNewsBinding;
@@ -44,6 +45,12 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ContViewHolder
     @Override
     public int getItemCount() {
         return list.size();
+    }
+
+    public void  addItems(List<News> newsList){
+        list = (ArrayList<News> )newsList;
+//        newsList.addAll(newsList);
+        notifyDataSetChanged();
     }
 
     public static class ContViewHolder extends RecyclerView.ViewHolder {

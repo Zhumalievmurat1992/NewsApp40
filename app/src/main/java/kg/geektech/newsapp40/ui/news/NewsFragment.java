@@ -21,6 +21,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
+import kg.geektech.newsapp40.App;
 import kg.geektech.newsapp40.R;
 import kg.geektech.newsapp40.databinding.FragmentNewsBinding;
 import kg.geektech.newsapp40.databinding.FragmentProfileBinding;
@@ -28,7 +29,7 @@ import kg.geektech.newsapp40.models.News;
 
 
 public class NewsFragment extends Fragment {
-       private FragmentNewsBinding binding;
+    private FragmentNewsBinding binding;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -55,21 +56,14 @@ public class NewsFragment extends Fragment {
     @RequiresApi(api = Build.VERSION_CODES.N)
     private void save() {
         String text = binding.editText.getText().toString();
-        /*Date currentTime = Calendar.getInstance().getTime();
-        String formattedDate = DateFormat.getDateInstance(DateFormat.FULL).format(currentTime);
-        String[] splitDate = formattedDate.split(",");
-        binding.editText.setText(splitDate[0]);*/
-//        Date news = Calendar.getInstance().getTime();
-//        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("hh:mm a",Locale.getDefault());
-//        String date = simpleDateFormat.format(text);
-        News news = new News(text,System.currentTimeMillis());
+        News news = new News(text, System.currentTimeMillis(),"Description");
 
-        Bundle bundle = new Bundle();
-        bundle.putSerializable("news",news);
-        getParentFragmentManager().setFragmentResult("rk_news",bundle);
-
+//        Bundle bundle = new Bundle();
+//        bundle.putSerializable("news", news);
+//        getParentFragmentManager().setFragmentResult("rk_news", bundle);
+        App.dataBase.newsDao().insertNews(news);
         close();
-        }
+    }
 
     private void close() {
         NavController navController = Navigation.findNavController(requireActivity(),

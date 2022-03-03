@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context=".ui.news.NewsFragment"
-    android:id="@+id/rootView">
+    tools:context=".ui.news.NewsFragment">
 
-   <EditText
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:inputType="textCapSentences"
-       android:id="@+id/edit_text"
-       android:hint="Введите новость"/>
+    <EditText
+        android:id="@+id/edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Введите новость"
+        android:inputType="textCapSentences" />
 
     <Button
         android:id="@+id/btn_save"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Save"
-        android:textAllCaps="false"/>
+        android:textAllCaps="false" />
 
 </LinearLayout>
