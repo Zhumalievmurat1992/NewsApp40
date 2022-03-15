@@ -12,6 +12,9 @@ public class Prefs {
         preferences = context.getSharedPreferences("settings", Context.MODE_PRIVATE);
 
     }
+//    public void savePhone(){
+//        preferences.edit().putBoolean("phoneNumber",true).apply();
+//    }
 
     public void saveBoardState() {
         preferences.edit().putBoolean("board_state", true).apply();

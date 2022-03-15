@@ -13,16 +13,20 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/NewsApp40/app/src/main/res/drawable/indicator_default.xml" value="0.21296296296296297" />
         <entry key="..\:/Users/User/AndroidStudioProjects/NewsApp40/app/src/main/res/drawable/indicator_selected.xml" value="0.21296296296296297" />
         <entry key="..\:/Users/User/AndroidStudioProjects/NewsApp40/app/src/main/res/drawable/indicator_selector.xml" value="0.21296296296296297" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/NewsApp40/app/src/main/res/drawable/prbar.xml" value="0.124" />
         <entry key="..\:/Users/User/AndroidStudioProjects/NewsApp40/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/User/AndroidStudioProjects/NewsApp40/app/src/main/res/layout/fragment_board.xml" value="0.2" />
         <entry key="..\:/Users/User/AndroidStudioProjects/NewsApp40/app/src/main/res/layout/fragment_dashboard.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/User/AndroidStudioProjects/NewsApp40/app/src/main/res/layout/fragment_home.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/NewsApp40/app/src/main/res/layout/fragment_login.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/User/AndroidStudioProjects/NewsApp40/app/src/main/res/layout/fragment_news.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/User/AndroidStudioProjects/NewsApp40/app/src/main/res/layout/fragment_notifications.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/User/AndroidStudioProjects/NewsApp40/app/src/main/res/layout/fragment_person.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/NewsApp40/app/src/main/res/layout/fragment_phone_number.xml" value="0.25" />
         <entry key="..\:/Users/User/AndroidStudioProjects/NewsApp40/app/src/main/res/layout/fragment_profile.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/User/AndroidStudioProjects/NewsApp40/app/src/main/res/layout/item_board.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/User/AndroidStudioProjects/NewsApp40/app/src/main/res/layout/item_news.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/NewsApp40/app/src/main/res/layout/item_phone.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/User/AndroidStudioProjects/NewsApp40/app/src/main/res/menu/bottom_nav_menu.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/User/AndroidStudioProjects/NewsApp40/app/src/main/res/menu/option_menu.xml" value="0.20416666666666666" />
       </map>

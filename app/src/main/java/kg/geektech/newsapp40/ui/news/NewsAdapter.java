@@ -37,7 +37,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ContViewHolder
         holder.bind(list.get(position));
     }
 
-    public void addItem(News news) {
+    public void addItems(News news) {
         list.add(0,news);
         notifyItemInserted(0);
     }

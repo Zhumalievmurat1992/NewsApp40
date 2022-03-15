@@ -24,16 +24,11 @@ import kg.geektech.newsapp40.databinding.FragmentHomeBinding;
 import kg.geektech.newsapp40.models.News;
 
 public class HomeFragment extends Fragment {
-
-    private HomeViewModel homeViewModel;
     private NewsAdapter homeAdapter;
     private FragmentHomeBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-//        homeViewModel =
-//                new ViewModelProvider(this).get(HomeViewModel.class);
-
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
@@ -48,8 +43,6 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-
         binding.recyclerView.setAdapter(homeAdapter);
         binding.fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,11 +54,7 @@ public class HomeFragment extends Fragment {
                 getViewLifecycleOwner(), new FragmentResultListener() {
                     @Override
                     public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
-//                        News news = (News) result.getSerializable("news");
-//                        homeAdapter.addItem(news);
-//                        Date currentTime = Calendar.getInstance().getTime();
-//                        Log.e("Home", "text: " + news.getTitle());
-//                        Log.e("Text", "text: " + currentTime.toString());
+
                     }
                 });
 

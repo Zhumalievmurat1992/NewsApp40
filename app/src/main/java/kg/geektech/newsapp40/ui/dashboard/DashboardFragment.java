@@ -12,6 +12,9 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
+
 import kg.geektech.newsapp40.R;
 import kg.geektech.newsapp40.databinding.FragmentDashboardBinding;
 
@@ -27,12 +30,16 @@ public class DashboardFragment extends Fragment {
 
         binding = FragmentDashboardBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-
-        final TextView textView = binding.textDashboard;
-        dashboardViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        final TextView textView = binding.notice;
+        textView.setText("Please input your Email and Password");
+        binding.submit.setOnClickListener(view -> {
+            YoYo.with(Techniques.Tada).duration(700).playOn(binding.editArea);
+            textView.setText("Wrong password!");
+        });
+       dashboardViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
-                textView.setText(s);
+              //  textView.setText(s);
             }
         });
         return root;

@@ -14,7 +14,6 @@ import kg.geektech.newsapp40.databinding.FragmentBoardBinding;
 
 public class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.ViewHolder> {
 
-    FragmentBoardBinding binding;
     private String[] titles = new String[]{"salam", "privet", "hello"};
     private String[] desc = new String[]{" Добро пожаловать!!! ", " страница для ознакомление ", "всего"};
     Integer[] img = new Integer[]{R.drawable.img3, R.drawable.img, R.drawable.img_1};

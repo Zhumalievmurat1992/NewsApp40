@@ -14,6 +14,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator;
 
 import kg.geektech.newsapp40.Prefs;
@@ -25,6 +27,7 @@ import kg.geektech.newsapp40.databinding.FragmentBoardBinding;
 public class BoardFragment extends Fragment {
     FragmentBoardBinding binding;
     SpringDotsIndicator dotsIndicator;
+    FirebaseAuth firebaseAuth;
 
 
     @Override
@@ -44,7 +47,6 @@ public class BoardFragment extends Fragment {
         dotsIndicator.setViewPager2(viewPager2);
         binding.tvSkip.setOnClickListener(view12 -> close());
         binding.btnGetStarted.setOnClickListener(view1 -> close());
-
 
         viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
@@ -74,7 +76,7 @@ public class BoardFragment extends Fragment {
     private void close() {
         Prefs prefs = new Prefs(requireContext());
         prefs.saveBoardState();
-        // prefs.isBoardShown();
+        //prefs.isBoardShown();
         NavController navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_activity_main);
         navController.navigateUp();
     }

@@ -11,10 +11,13 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.NavDestination;
 import androidx.navigation.Navigation;
@@ -22,14 +25,18 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import kg.geektech.newsapp40.databinding.ActivityMainBinding;
+import kg.geektech.newsapp40.ui.autehentication.ui.login.PhoneNumberFragment;
 
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
-     private Prefs prefs;
+    private Prefs prefs;
+    //private FirebaseAuth firebaseAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+       // firebaseAuth = FirebaseAuth.getInstance();
         prefs = new Prefs(this);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -43,10 +50,10 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
 
+       if (!prefs.isBoardShown()){ navController.navigate(R.id.boardFragment);
+           navController.navigate(R.id.phoneNumberFragment);
+       }
 
-       //  prefs = new Prefs(this);
-       if (!prefs.isBoardShown())
-            navController.navigate(R.id.boardFragment);
 
         navController.addOnDestinationChangedListener(new NavController.OnDestinationChangedListener() {
             @Override
@@ -60,7 +67,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.option_menu, menu);

@@ -71,6 +71,7 @@ public class ProfileFragment extends Fragment {
                                 } catch (NullPointerException ignored) {
                                 }
                                 binding.photo.setImageURI(uri);
+                                binding.editName.setText(prefs.getName());
                             }
                         }
                     });
@@ -112,8 +113,7 @@ public class ProfileFragment extends Fragment {
                 prefs.saveName(editable.toString());
             }
         });
-        binding.editName.setText(prefs.getName());
-
-    }
+//        binding.editName.setText(prefs.getName());
+}
 
 }
